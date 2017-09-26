@@ -56,7 +56,35 @@ gulp + ejs + html-extend
 HTML規範
 ---
 
+###頁面架構
+```
+html
+
+	head
+		meta
+		title
+		link
+			- {library}
+			- {global css}
+			- {in-page css}
+
+	body
+		.layout-container
+			header
+			.layout-view
+				- {banner}
+				- {page content}
+			footer
+
+		script
+			- {library}
+			- {global js}
+			- {in-page js}
+
+```
+
 ### 命名
+頁面名稱會有人連ga跟seo一起定，如果自己先取了要提供給對方，免得到時要改
 
 ### 編寫風格
 
