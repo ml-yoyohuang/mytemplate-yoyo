@@ -1,0 +1,114 @@
+// Initial
+@import "../initial";
+
+.accordion-bar{
+  position: relative;
+  background: #e4d8c7 url('../img/texture-wood-a10.jpg') center;
+  cursor: pointer;
+  .col-icon, .col-arrow, .col-title{
+    display: inline-block;
+    vertical-align: top;
+  }
+  .col-icon, .col-arrow{
+    width: 45px;
+    min-height: 45px;
+    line-height: 45px;
+    text-align: center;
+    @media screen and (max-width:767px) {
+      width: 30px;
+      min-height: 30px;
+      line-height: 30px;
+      padding-left: 5px;
+    }
+  }
+  .col-icon{
+    font-family: '微軟正黑體', sans-serif;
+    transition: color 0.2s ease;
+    color: white;
+    .is-active &{
+      color: $c-ci;
+    }
+  }
+  .col-title{
+    width: 50%;
+    width: calc(100% - 95px);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 1.4;
+    @media screen and (max-width:767px) {
+      width: calc(100% - 70px);      
+      font-size: 14px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+  .col-arrow{
+    font-size: 13px;
+    transition: color 0.2s ease;   
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    span{
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      margin-top: -5px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    .icon-plus{
+      transition: transform 0.2s ease;
+    }
+    .is-active &{
+      .icon-plus{
+         transform: rotate(135deg);
+         &::before,&::after{
+          background-color: $c-ci;
+        }
+      }
+    }
+  }
+}
+.icon-plus{
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  &::before,&::after{
+    transition: background-color 0.2s ease;
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #b4a590;
+  }
+  &::before{
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: 4px;
+  }
+  &::after{
+    height: 2px;
+    width: 100%;
+    top: 4px;
+    left: 0;
+  }
+}
+
+.accordion-content{
+  line-height: 1.5;
+  max-height: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: max-height 0.5s ease;
+  .is-active &{
+    max-height: 200vh;
+    transition-duration: 1s;
+  }
+}

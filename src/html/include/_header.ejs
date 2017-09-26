@@ -1,0 +1,60 @@
+
+<% if (page == "brand" || page == "wood" || page == "design") { nav[0].classname = "is-active" } %>
+<% if (page == "newslist" || page == "news-detail") { nav[1].classname = "is-active" } %>
+<% if (page == "productlist" || page == "product-detail") { nav[2].classname = "is-active" } %>
+<% if (page == "shop_tw" ) { nav[3].classname = "is-active" } %>
+<% if (page == "faq" ) { nav[4].classname = "is-active" } %>
+<% if (page == "service" || page == "contact" || page == "business") { nav[5].classname = "is-active" } %>
+
+<header id="header">
+	<div class="btn-hamburger on-mobile">
+		<i class="icon-hamburger">
+			<i></i>
+			<i></i>
+			<i></i>
+		</i>
+	</div>
+	<div class="inner-wrap">
+
+		<nav class="header-nav on-desk">
+			<ul class="header-nav-list">
+				<% for(var i = 0; i<nav.length; i++){ %>
+				<li class="header-nav-item <%= nav[i].classname %>">
+					<a <% if ( nav[i].url != "" ) { %>href="<%= nav[i].url %>"<% } %> ><%= nav[i].name %></a>
+					<% if ( nav[i].item != "" ) { %>
+					<ul class="header-subnav-list">
+						<% for(var j = 0; j<nav[i].item.length; j++){ %>
+						<li class="header-subnav-item"><a href="<%=nav[i].item[j].url%>"><%=nav[i].item[j].name%></a></li>
+						<% } %>
+					</ul>
+					<% } %>
+				</li>
+				<% } %>
+			</ul>
+		</nav>
+
+		</div>
+	</div>
+</header>
+
+<div class="header-menu on-mobile">
+	<ul class="menu-wrap clearfix">
+		<% for(var i = 0; i<nav.length; i++){ %>
+		<li class="header-menu-item" data-pid="<%=(i+1)%>">
+			<a <% if ( nav[i].url != "" ) { %>href="<%= nav[i].url %>"<% } %> >
+				<%= nav[i].name %>
+			</a>
+			<% if ( nav[i].item != "" ) { %>
+			<ul class="header-submenu">
+				<% for(var j = 0; j<nav[i].item.length; j++){ %>
+				<li class="header-submenu-item"><a href="<%=nav[i].item[j].url%>"><%=nav[i].item[j].name%></a></li>
+				<% } %>
+			</ul>
+			<% } %>
+		</li>
+		<% } %>
+	</ul>
+		
+	<div class="header-overlap"></div>
+
+</div>

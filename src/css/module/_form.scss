@@ -1,0 +1,439 @@
+/* RESET */
+
+input,textarea,select{
+    border-width: 0;
+    border-radius: 2px;
+    padding-left: 10px;
+    @extend %chineseFont;
+    font-size: 1em;
+    color: inherit;
+    background-color: #fff;
+    &:focus{
+        outline: none;
+    }
+    &.readonly, &:read-only, &:-moz-read-only{
+        cursor: unset !important;
+        pointer-events: none !important;
+    }
+}
+
+select{
+    -webkit-appearance: none; /*Chrome*/
+    -moz-appearance: none; /*FF*/
+    appearance: none;/*CSS3*/
+    &::-ms-expand {
+        display: none; /*IE*/
+        @media screen and (max-width: 1024px) {
+            letter-spacing: 1px;
+        }
+    }
+}
+
+button,input[type="submit"],a.style-btn{
+    font-family: 'Chinese' , sans-serif;
+    border: 0;
+    -webkit-appearance: none; /*Chrome*/
+    -moz-appearance: none; /*FF*/
+    appearance: none;/*CSS3*/
+    
+}
+
+/*STYLES*/
+textarea{
+    resize: none;
+    line-height: 2;
+    border: 1px solid $c-ci;
+    width: 100%;
+}
+input{
+    border: 1px solid $c-ci;
+    line-height: 2;
+}
+/*STYLES*/
+button,input[type="submit"],a.style-btn{
+    font-size: 15px;
+    font-weight: bold;
+    background-color: $c-ci;
+    padding: 18px 40px;
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+    line-height: 1;
+    letter-spacing: 1px;
+    @media screen and (max-width:767px) {
+        padding: 10px 30px;
+        font-size: 14px;
+        font-weight: normal;
+    }
+    &:focus{
+        outline: none;
+    }
+    &.style-disabled{
+        background-color: #666;
+        pointer-events: none;
+    }
+    &.style-gray{
+        background-color: #666;        
+    }
+    &.style-orange{
+        background-color: $c-ci;
+    }
+    &.style-alpha{
+        background-color: rgba(0,0,0,0.5);
+        border: 1px solid white;
+    }
+}
+
+
+/* SELECT MODULE */
+// .select-wrap>(select>option)+::after
+// SKELETON
+$select-h: 40px;
+$select-mw: 130px;
+select{
+    min-height: $select-h;
+    max-width: 100%;
+    min-width: $select-mw;
+    font-size: 1em;
+    cursor: pointer;
+    background: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: $select-h;
+    &.error{
+    }
+    option{
+        border: 0;
+        letter-spacing: 2px;
+    }
+    @media screen and (max-width:767px) {
+        min-height: 25px;
+        line-height: 25px;
+    }
+}
+//STYLE
+select{
+    border: 1px solid $c-ci;
+}
+.select-wrap{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
+    margin-right: 5px;
+    @media screen and (max-width:767px) {
+        width: 100%;
+        // width: calc(100% - 8px);
+        margin-bottom: 10px;
+    }
+}
+
+.select-wrap{ //set arrow icon on date & select
+    select{
+        width: 100%;
+        -webkit-appearance: none; /*Chrome*/
+        -moz-appearance: none; /*FF*/
+        appearance: none;/*CSS3*/
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    bottom: 0;
+    right: 1em;
+    margin-top: -2px;
+    /* V-shape arrow */
+    // width: 10px;
+    // height: 10px;
+    // border-right: 2px solid #444;
+    // border-bottom: 2px solid #444;
+    // transform: rotate(45deg);
+
+    /* traingle arrow */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: #666 transparent transparent transparent;
+
+    @media screen and (max-width: 1024px) {
+        // width: 5px;
+        // height: 5px;
+      }
+    }
+  }
+
+
+
+/* INPUT MODULE */
+$label-w : 150px;
+$label-w-m : 90px;
+
+.form-block{
+    position: relative;
+    padding-left: $label-w;
+    padding-bottom: 35px;
+    min-height: 40px;
+    line-height: 40px;
+    @media screen and (max-width:1023px) {
+        padding-left: $label-w-m;
+        padding-bottom: 20px;
+    }
+
+    /* FORM BLOCK STYLES */
+    &.style-nolabel{
+        padding-left: 0;
+    }
+    &.style-slim{ //radio height
+        // line-height: 24px;
+        min-height: 24px;
+        @media screen and (max-width:767px) {
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .module-form-label{
+            // padding-top: 0;
+            // line-height: 24px;
+            @media screen and (max-width:767px) {
+                padding-top: 10px;
+            }
+        }
+    }
+    &.style-short{
+        max-width: 270px;
+        width: auto;
+        display: inline-block;
+        vertical-align: top;
+
+        &.style-shortlabel{
+            padding-left: 6em;
+            .module-form-label{
+                width: 6em;
+            }
+        }
+    }
+    &.style-half{
+        display: inline-block;
+        vertical-align: top;
+        width: 45%;
+        width: calc(  50% - 0.15em);
+
+        @media (max-width: 767px){
+            width: 100%;
+            margin-left: 0;
+        }
+        .module-radio{
+            @media screen and (max-width:767px) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &.style-full{
+        &:last-child{
+            @media screen and (max-width:767px) {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    /* FORM BLOCK CHILDS */
+    .helper{
+        line-height: 1.4;
+        padding-top: 10px;
+        font-size: 15px;
+        @media screen and (max-width:767px) {
+            font-size: 13px;
+        }
+    }
+
+    .module-form-label{
+        width: $label-w;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        padding-top: 10px;
+        @media screen and (max-width:1023px) {
+            width: $label-w-m;
+            text-align: left;
+            padding-bottom: 10px;
+        }
+    }
+
+    .module-form-input{
+        width: 100%;
+        height: 40px;
+        background-color: white;
+        color: black;
+        &.error{/*class added from validate js*/
+            background-color: #ffe4e4;
+        }
+
+        &+.unit,&+.error+.unit{
+            position: absolute;
+            right: 10px;
+            top: 0;
+            @media screen and (max-width:767px) {
+                top: 44px;
+            }
+        }
+
+        &.style-short{
+            max-width: 130px;
+            @media screen and (max-width:767px) {
+                // max-width: 100%;
+            }
+        }
+        &.style-middle{
+            width: 37.5%;// 295/790
+            max-width: 295px;
+            @media screen and (max-width:767px) {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        &.style-long{
+            width: 65%;// 510/790
+            max-width: 510px;
+            @media screen and (max-width:767px) {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+    .module-form-textarea{
+        padding-top: 5px;
+        width: 100%;
+        height: 12em;
+        line-height: 1.5;
+        background-color: white;
+        &.error{/*class added from validate js*/
+            background-color: #ffe4e4;
+        }
+    }
+    label.error{ /*appended from validate js*/
+        display: block;
+        text-align: left;
+        line-height: 2;
+        color: #e60012;
+    }
+    fieldset{
+        line-height: 1;
+        vertical-align: auto;
+        vertical-align: initial;
+        display: inline-block;
+        &.block{
+            width: 100%;
+            display: block;
+            line-height: 40px;
+            line-height: inherit;
+            &+.block{
+                padding-top: 20px;
+            }
+            .append-text{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+    .select-wrap{
+        select{
+            height: 40px;
+            @media screen and (max-width:767px) {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+/* RADIO ^CHECKBOX MODULE */
+
+$radio-w : 18px;
+.module-radio{
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  line-height: $radio-w;
+  min-width: 72px; /*fit pad 2 word*/
+  @media screen and (max-width:767px) {
+    // padding-bottom: 10px; 
+    margin-bottom: 10px;
+    min-width: 60px;
+  }
+  input{
+    z-index: 3;
+    position: absolute;
+    // margin-top: 0.2em;
+    margin: 0;
+    width: $radio-w;
+    height: $radio-w;
+    opacity: 0;
+  }
+  span{
+    display: inline-block;
+    padding-left: $radio-w + 10px;
+    padding-right: 1em;
+    @media screen and (max-width:767px) {
+        padding-left: $radio-w + 4px;        
+    }
+  }
+}
+
+.module-symbol{
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+  // margin-top: 0.25em;
+  border-color: $c-ci;
+  border-style: solid;
+  background-color: white;
+  border-width: 1px;
+  width: $radio-w;
+  height: $radio-w;
+  z-index: 0;
+
+  input[type="checkbox"] + &{
+    border-radius: 0;
+    &::before {
+      border-radius: 0;      
+    }
+  }
+  input.error + &{/*class added from validate js*/
+    // background-color: #ffe4e4;
+    // &::before {
+    //   background: url('../../images/icon-check-error.svg') center center no-repeat;
+    // }
+  }
+
+
+  &::before {
+    //@include border-radius(50%);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: $radio-w;
+    width: calc( #{$radio-w} - 8px);
+    height: $radio-w;
+    height: calc( #{$radio-w} - 8px);
+    background-color: #626262;
+    border-radius: 50%;
+    // background-color: $c-ci;
+    // //@include gradient-directional($start-color: $c-ci, $end-color: $c-ci, $deg: 135deg);
+  }
+}
+
+input:checked + .module-symbol{
+  // border-color: black;
+  &::before {
+    content: '';
+    // background: url('../../img/icon-check.svg') center center no-repeat;
+  }
+}

@@ -1,0 +1,44 @@
+.module-icon{
+  width: 55px;
+  height: 55px;
+  position: relative;
+  display: inline-block;
+  &::before , &::after{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include transition(opacity 0.2s ease);
+  }
+  &::before{
+    opacity: 1;
+  }
+  &::after{
+    opacity: 0;
+  }
+
+  li:hover &, li.is-active &{
+    &::before{
+      opacity: 0;
+    }
+    &::after{
+      opacity: 1;
+    }
+
+  }
+}
+
+.icon-development{
+  &::before{
+    background-image: url('/images/icon-development.svg');
+  }
+  &::after{
+    background-image: url('/images/icon-development-w.svg');
+  }
+
+}

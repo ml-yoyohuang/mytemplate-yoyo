@@ -1,0 +1,30 @@
+{
+	"variables":{
+		"lang": "zh-tw"
+	},
+	"snippets": {
+		"css": {
+			"abbreviations": {
+				"mqm": "@media screen and (min-width:${1}px) {\n\t|\n}",
+				"mqx": "@media screen and (max-width:${1}px) {\n\t|\n}",
+				"mmh": "@media screen and (min-height:${1}px) {\n\t|\n}",
+				"mxh": "@media screen and (max-height:${1}px) {\n\t|\n}",
+				"mmwh": "@media screen and (min-width:${1}px), screen and (min-height:${2}px) {\n\t|\n}",
+				"mxwh": "@media screen and (max-width:${1}px), screen and (max-height:${2}px) {\n\t|\n}",
+				"mqp": "@media screen and (orientation: portrait) {\n\t|\n}",
+				"mql": "@media screen and (orientation: landscape) {\n\t|\n}"
+			}
+		},
+		"html": {
+			"abbreviations": {
+				"mlayout": "!!!+html[lang=\"zh-tw\"]>head+body>.layout-container>header+#layout-view.layout-view+footer",
+				"collr": ".col-left+.col-right",
+				"mcheck": "label.module-radio>input:checkbox+i.module-symbol+span+p.error_msg",
+				"mradio": "label.module-radio>input:radio+i.module-symbol+span+p.error_msg",
+				"mselect": ".select-wrap>select>option",
+				"minput|minput:full": ".form-block.style-full>label.module-form-label+input.module-form-input",
+				"minput:half": ".form-block.style-half>label.module-form-label+input.module-form-input"
+			}
+		}
+	}
+}

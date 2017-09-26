@@ -1,0 +1,39 @@
+<!-- @@master  = _layout.ejs  {"pagename":"error404"} -->
+
+<!-- @@block  =  specific_stylesheet-->
+<style>
+	.container-404{
+		background: #faf7f0 url("img/bg-404.png") center no-repeat;
+		position: fixed;
+		z-index: 998;
+		display: block;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		min-height: 360px;
+	}
+	@media screen and (max-width:400px) {
+		.container-404{
+			background-size: contain;
+		}
+	}	
+	@media screen and (max-height:360px) {
+		.container-404{
+			background-position: top center;
+		}
+	}	
+
+</style>
+<!-- @@close-->
+
+<!-- @@block  =  specific_javascript-->
+<script>
+	$(function() {
+	});	
+</script>
+<!-- @@close-->
+<!-- @@block  =  content-->
+<a href="index.html" class="container-404" ></a>
+<!-- @@close-->
+

@@ -1,0 +1,57 @@
+.layout-container.style-simple{
+  border: 5px solid $c-ci;
+  @media screen and (max-width:1024px) {
+    overflow-x: initial; 
+  }
+  @media screen and (max-width:767px) {
+    border-width: 3px;
+  }
+  &>.btn-x{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: $c-ci;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    padding-top: 25px;
+    cursor: pointer;
+    @media screen and (max-width:767px) {
+      width: 35px;
+      height: 35px;
+      padding-top: 10px;
+    }
+    .shape-x{
+      display: inline-block;
+      position: relative;
+      width: 30px;
+      height: 21px;
+      @media screen and (max-width:767px) {
+        width: 15px;
+        height: 10px;
+      }
+      &::before,&::after{
+        content: '';
+        height: 1px;
+        width: 28px;
+        background-color: white;
+        position: absolute;
+        top: 10px;
+        left: 0;
+
+        @media screen and (max-width:767px) {
+          width: 14px;
+          top: 5px;
+        }
+      }
+      &::before{
+        transform: rotate(45deg);
+      }
+      &::after{
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

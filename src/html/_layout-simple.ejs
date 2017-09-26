@@ -1,0 +1,35 @@
+<% var page = '<!-- @@var pagename -->' %>
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+<% include include/_head %>
+<!-- IN-PAGE CSS -->
+<!-- @@placeholder= specific_stylesheet -->
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3MN3WR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--[if lte IE 10]>
+<a href="index.html" class="container-ltie10"  href="https://support.microsoft.com/zh-tw/help/17621/internet-explorer-downloads" target="_blank"></a>
+<![endif]-->
+          
+<div class="layout-container style-simple">
+<a class="btn-x" onclick="backpage()"><i class="shape-x"></i></a>
+<!-- CONTENT START -->
+<div id="layout-view" class="layout-view <%= page %>">
+<!-- @@placeholder= content -->
+</div>
+<!-- CONTENT END   -->
+<!-- GLOBAL JS START -->
+<% include include/_js %>
+<!-- GLOBAL JS END   -->
+<!-- IN-PAGE JS START -->
+<!-- @@placeholder= specific_javascript -->
+<!-- IN-PAGE JS END -->
+</body>
+</html>

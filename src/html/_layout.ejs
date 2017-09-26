@@ -1,0 +1,73 @@
+<% var page = '<!-- @@var pagename -->' %>
+<%# PAGE裡面帶值出來：頁內指定master時在大括號裡面宣告/雙小老鼠取用 %>
+<% var x = 12345 %>
+<%# 外面帶值進去PAGE裡面：直接EJS宣告，頁內會直接吃到 %>
+<%# 網站地圖 直接倒進header、footer、sitemap頁 %>
+<% var map = [
+{
+	name: "選單一",
+	url: "",
+	classname: "",
+	item:[
+	{
+		name: "選單一-1",
+		url: "page.html"
+	},
+	{
+		name: "選單一-2",
+		url: "page.html"
+	},
+	{
+		name: "選單一-3",
+		url: "page.html"
+	}			
+	]
+},
+{
+	name: "選單二",
+	url: "page.html",
+	classname: "",
+	item:[]
+},{
+	name: "選單三",
+	url: "page.html",
+	classname: "",
+	item:[]
+}
+] %>
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+<% include include/_head %>
+<!-- IN-PAGE CSS -->
+<!-- @@placeholder= specific_stylesheet -->
+</head>
+
+<body>
+<%# Google Tag Manager (noscript) %>
+<!--[if lte IE 10]>
+<a href="index.html" class="container-ltie10" href="https://support.microsoft.com/zh-tw/help/17621/internet-explorer-downloads" target="_blank"></a>
+<![endif]-->
+          
+<div class="layout-container">
+<!-- HEADER START -->
+<%- include("include/_header",{page:page,nav:map}) %>
+<%# 外面帶值進去INCLUDE元件：include時在大括號裡面帶值 %>
+<!-- HEADER END   -->
+
+<%# PAGE CONTENT %>
+<div id="layout-view" class="layout-view <%= page %>">
+<!-- @@placeholder= content -->
+</div>
+
+<%- include("include/_footer",{page:page,nav:map}) %>
+</div>
+
+<%# GLOBAL JS %>
+<% include include/_js %>
+
+<%# IN-PAGE JS %>
+<!-- @@placeholder= specific_javascript -->
+</body>
+</html>

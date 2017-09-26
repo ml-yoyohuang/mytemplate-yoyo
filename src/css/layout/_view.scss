@@ -1,0 +1,155 @@
+::-moz-selection { /* Code for Firefox */
+  background: $c-ci;
+  color: white;
+}
+::selection {
+  background: $c-ci;
+  color: white;
+}
+img[src$=".png"]{
+   image-rendering: optimizeQuality; /* Legal fallback */
+ }
+
+ body{
+  // -webkit-font-smoothing: antialiased; 
+  background-color: white;
+  overflow-x: hidden;
+  color: black;
+  &.is-openmenu,&.is-lockscroll{
+    @media (max-width: 1024px){
+      overflow: hidden;
+    }
+  }
+  @media (max-width: 1024px){
+    // width: 1024px;
+    overflow-x: auto;
+    font-size: 14px;
+  }
+}
+html,body{
+  -webkit-overflow-scrolling: touch;  
+  @media screen and (max-width:1024px) {
+    // height: 100%;
+  }
+}
+// 主容器
+.layout-container {
+  @media (max-width: 1024px){
+    overflow-x: hidden;
+    // overflow: auto;
+    // height: 100%;
+    // min-height: 100vh;
+  }
+}
+//其他LAYOUT樣式
+// @import "_layout-simple";
+
+// 主內容區塊
+.layout-view {
+  position: relative;
+  min-height: 100%;
+  min-height: 100vh;
+  padding-top: $header-h;
+  color: #6e6e6e;
+  @media (max-width: 767px){
+    // min-height: auto;
+    padding-top: $header-h-m;
+  }
+  padding-bottom: 0;
+  .is-opening-submenu &{
+    opacity: 0.1;
+  }
+}
+.inner-wrap{
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.style-spfont{
+  font-family: "Quintessential", 微軟正黑體,Arial,Helvetica,sans-serif;
+}
+.style-font-times{
+  font-family: "Times New Roman", 微軟正黑體,Arial,Helvetica,sans-serif;
+}
+.style-smallfont{
+  font-size: 12px;
+}
+.style-center{
+  text-align: center;
+}
+.style-left{
+  text-align: left;
+}
+.style-right{
+  text-align: right;
+}
+.style-link{
+  color: $c-ci;
+  text-decoration: underline;
+  // @include transition(color 0.1s ease);
+  &:link,&:visited{
+    color: $c-ci;
+  }
+  &:hover,&:active{
+    color: $c-ci;
+  }
+}
+
+.on-mobile{
+  @media (min-width: 1024.01px){
+    display: none !important;
+  }
+}
+
+.on-desk{
+  @media (max-width: 1024px){
+    display: none !important;
+  }
+}
+
+
+.on-mobilephone{
+  @media (min-width: 768px){
+    display: none !important;
+  }
+}
+
+.on-deskpad{
+  @media (max-width: 767.99px){
+    display: none !important;
+  }
+}
+
+
+.br{
+  display: inline-block;
+}
+
+.imgframe{
+  position: relative;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  &::before {
+    content: '';
+    display: block;
+    // padding-top: 56.25%;
+  }
+}
+.imgframe-16to9{
+  &::before {
+    padding-top: 56.25%;
+  }
+}
+
+.imgframe-4to3{
+  &::before {
+    padding-top: 75%;
+  }
+}
+
+.imgframe-3to2{
+  &::before {
+    padding-top: 66.67%;
+  }
+}

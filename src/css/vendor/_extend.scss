@@ -1,0 +1,67 @@
+// Disable ul preset styles
+%listUnstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Make li be inline-block
+%listInline {
+  @extend %listUnstyled;
+  > li {
+    display: inline-block;
+  }
+}
+
+// Fix float
+%clearFix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin clearFix{
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Adorn Chinese Font -eng first, chn last
+%chineseFont {
+  font-family: "Arial", 'Chinese', "微軟正黑體", sans-serif;
+}
+
+//background-size
+@mixin backgroundSize($value) {
+  -moz-background-size: $value;
+  -webkit-background-size: $value;
+  -o-background-size: $value;
+  background-size: $value;
+}
+
+//text-overflow
+@mixin textOverflow1{
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin textOverflow($value) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $value;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  -webkit-box-orient: vertical;
+  }

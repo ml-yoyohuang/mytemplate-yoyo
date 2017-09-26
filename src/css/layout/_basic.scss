@@ -1,0 +1,36 @@
+// html {
+//   height: 100%;
+// }
+// body {
+//   position: relative;
+//   min-height: 100%;
+//   font-size: 16px;
+//   @extend %chineseFont;
+// }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  &:before,
+  &:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+a {
+  text-decoration: none;
+}
+a,a:link,a:hover,a:active,a:visited{
+  color: inherit;
+}
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
