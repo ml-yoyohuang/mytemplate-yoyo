@@ -167,6 +167,27 @@ var hashObj = hashToObject();
   $(window).resize(function(){
   });
 
+
+  //GA SEND
+  $('body').on('click', '[data-label]', function(event) {
+    var myLabel = $(this).attr("data-label");
+    var myEvent = $(this).attr("data-event") ? $(this).attr("data-event") : 'click';
+    ga('send', 'event', pagename, myEvent , myLabel);
+    // console.log("page = "+ pagename +", Label = "+ myLabel +" , Event = " + myEvent );
+  });
+
+  // var pagename = location.pathname.replace("/FrontEnd/", "").replace(".html", "");
+  var lastSentCategory = -1;
+  $('body').on('mouseover touchstart', '[data-category]', function(event) {
+    var myCat = $(this).attr("data-category");
+    if( myCat != lastSentCategory){
+      lastSentCategory = myCat;
+      ga('send', 'pageview', pagename + "/#/"+ myCat );
+      // console.log("page = "+ pagename +", Category = /#/"+ myCat );
+    }
+  });
+
+
   // 執行 FastClick
   FastClick.attach(document.body);
 
