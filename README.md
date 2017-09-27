@@ -45,25 +45,29 @@ gulp + ejs + html-extend模板工具
 #### task 未來需要加強的項目
 - 更新一支檔會全部重build的問題
 - 更新JS時會停掉gulp的問題
+- ts編譯
+- 導入eslint
 - 是否有可能自動取得某 folder 的 filename 列表並寫入 EJS?
 - 是否有可能批次產生頁面？
+
 
 ### EJS
 
 #### 頁面間取值
-[X] layout 傳進 page
-[X] layout 傳進 partial
-[X] page 傳出 layout
-[X] page 傳進 page
-[x] partial 傳出 layout
-[x] partial 傳進 page
-[ ] page 更改 layout 裡的變數
-[ ] partial 更改 layout 裡的變數	-所有跨檔案改值皆需新宣告一個值來接
+- [X] layout 傳進 page
+- [X] layout 傳進 partial
+- [X] page 傳出 layout
+- [X] page 傳進 page
+- [x] partial 傳出 layout
+- [x] partial 傳進 page
+- [ ] page 更改 layout 裡的變數
+- [ ] partial 更改 layout 裡的變數		-所有跨檔改值皆需新宣告一個值來接
+
 
 HTML規範
 ---
 
-###頁面架構
+### 頁面架構
 ```
 html
 
@@ -89,6 +93,8 @@ html
 
 ```
 
+### 歸檔
+
 ### 命名
 - 頁面名稱/部分區塊名稱會由同仁連ga跟seo一起定，如果自己先取了要提供給對方，免得到時要改
 
@@ -96,8 +102,10 @@ html
 
 
 
-CSS
+CSS規範
 ---
+
+### 歸檔
 
 ### 命名
 
@@ -107,8 +115,10 @@ CSS
 
 
 
-JS
+JS規範
 ---
+
+### 歸檔
 
 ### 命名
 
@@ -118,10 +128,13 @@ JS
 
 
 
-IMG
+IMG規範
 ---
+
+
+
 
 
 一些可愛的小動物
 ===
-:octopus: :beetle: :hamster: :tiger: :baby_chick: :tropical_fish: :bug: :turtle: :dolphin: :whale: :fish: :space_invader: :ram: :elephant: :rabbit: :koala: :boar: :penguin:
+:octopus: :beetle: :hamster: :tiger: :baby_chick: :tropical_fish: :bug: :turtle: :dolphin: :whale: :fish: :space_invader: :ram: :rabbit: :elephant: :koala: :boar: :penguin:
