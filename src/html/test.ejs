@@ -1,0 +1,41 @@
+<!-- @@master  = _layout.ejs  {"pagename":"test"} -->
+<!-- @@block  =  specific_stylesheet-->
+<!-- <link rel="stylesheet" type="text/css" href="css/unit/test.css" /> -->
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
+<style>
+
+</style>
+<!-- @@close-->
+
+<!-- @@block  =  specific_javascript-->
+<!-- <script src="js/unit/test.js"></script> -->
+<script>
+// 我们的数据对象
+new Vue({
+  data: {
+    a: 1,
+    b: { a: 123, b: 456 }
+  },
+  created: function () {
+    // `this` 指向 vm 实例
+    console.log('on created callback. data is:');
+    console.log( this ); //this = vue
+    console.log( this.$data ); //合法用法
+    // console.log( this.data ); //不合法用法
+    // console.log( this.$vnode ); //不合法用法
+    console.log( this.a ); //直接從data裡開始呼叫
+    console.log( this.b.a ); //直接從data裡開始呼叫
+  }
+})
+// => "a is: 1"
+</script>
+<!-- @@close-->
+<!-- @@block  =  content-->
+<section class="section-test">
+<div id="app1">
+	<h1>VUE TEST</h1>
+</div>
+</section>
+<!-- @@close-->
+

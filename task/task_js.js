@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const babel = require('gulp-babel');
 const gutil = require('gulp-util');
 const uglify = require('gulp-uglify');
 const path = require('path');
@@ -19,6 +20,9 @@ const sourcemapsHandler = require('./sourcemapHandler');
 gulp.task('js', () => {
     CONFIG.log('js');
     return gulp.src(SOURCE)
+	    .pipe(babel({
+	      presets: ['es2015']
+	    }))
         .pipe(gulpPlumber())
         .pipe(sourcemaps.init())
         .pipe(uglify())
