@@ -1,0 +1,115 @@
+input[type=date] {
+  -webkit-appearance: none; /*Chrome*/
+  -moz-appearance: none; /*FF*/
+  appearance: none;/*CSS3*/
+  &::-webkit-clear-button {
+    display: none;
+    // opacity: 0;
+    width: 0;
+    height: 0;
+    // height: 100%;
+    // position: relative;
+  }
+  &::-webkit-datetime-edit-year-field {
+    display: inline-block;
+    min-width: 1.5em;
+    padding-right: 0.2em;
+    text-align: center;
+  }
+  &::-webkit-datetime-edit-month-field {
+    display: inline-block;
+    min-width: 1.5em;
+    text-align: center;
+  }
+  &::-webkit-datetime-edit-day-field {
+    display: inline-block;
+    min-width: 1.5em;
+    text-align: center;
+  }
+
+  &::-webkit-inner-spin-button {
+    display: none;
+    width: 0;
+    height: 0;
+    // height: 100%;
+  }
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    width: 30px;
+    height: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.select-wrap.style-date{
+  &::after{
+    @media screen and (min--moz-device-pixel-ratio:0) {
+      content: none;
+    }
+    @media all and (-ms-high-contrast:none) {
+      content: none;      
+    }
+  }
+}
+
+/*jquery UI datepicker*/
+#ui-datepicker-div{
+  font-family: inherit;
+  .ui-widget-header{
+    background: $c-red;
+    border: 0;
+  }
+  .ui-datepicker-title span{
+    letter-spacing: 1px;
+    font-weight: normal;
+  }
+  th{
+    font-weight: normal;
+  }
+  .ui-datepicker-prev, .ui-datepicker-next, {
+    width: 1.4em;
+    height: 1.4em;
+    top: 0.4em;
+    cursor: pointer;
+  }
+  .ui-datepicker-prev-hover, .ui-datepicker-next-hover{
+    top: 0.4em;
+  }
+  .ui-datepicker-next, .ui-datepicker-next-hover{
+    right: 0.2em;    
+  }
+  .ui-datepicker-prev, .ui-datepicker-prev-hover{
+    left: 0.2em;    
+  }
+  .ui-icon.ui-icon-circle-triangle-w{
+    background: transparent url("../img/common/icon-prev.svg") center no-repeat;
+    background-size: contain;
+  }
+  .ui-icon.ui-icon-circle-triangle-e{
+    background: transparent url("../img/common/icon-next.svg") center no-repeat;
+    background-size: contain;
+  }
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    color: #666;
+    font-weight: normal;
+  }
+  .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{ /*today*/
+    background: $c-pink;
+    border: 1px solid #cccccc;
+  }
+  .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{
+    background: $c-red;
+    border-color: transparent;
+    color: white;
+  }
+  .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{ /*choosen*/
+    border-color: $c-red;
+    color: $c-red;
+    &.ui-state-hover{
+      color: white;      
+    }
+  }
+}

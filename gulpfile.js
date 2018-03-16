@@ -10,7 +10,7 @@ const config = require('./task/config.js');
 requireDir('./task');
 
 const DEFAULT_TASK = [
-    'html', 'js', 'css', 'image' , 'vendor'
+    'html', 'js', 'css', 'image'
 ];
 
 gulp.task('default', ['d']);

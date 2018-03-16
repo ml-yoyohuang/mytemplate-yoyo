@@ -2,16 +2,260 @@
 
 <!-- @@block  =  specific_stylesheet-->
 <style>
+h2{
+	padding-top: 100px;
+	font-size: 1.5em;
+}
+h3{
+	padding-top: 1em;
+	font-size: 1.2em;
+}
+.wrap-inner{
+	max-width: 980px;
+	margin: 0 auto;
+}
 </style>
 <!-- @@close-->
 
 <!-- @@block  =  specific_javascript-->
 <script>
 	$(function() {
+		$("h2[id]").each(function(index, el) {
+			var id = $(this).attr("id");	
+			var text = $(this).text();
+			$(this).html('<a href="#'+id+'"">'+text+"</a>")
+		});
 	});	
 </script>
 <!-- @@close-->
 <!-- @@block  =  content-->
+
+<section class="section-guideline">	
+	<div class="wrap-inner">
+
+		<h1>Guideline</h1>
+		<h2 id="dom">全站架構</h2>
+		<h2 id="plugin">使用套件</h2>
+		<h2 id="typography">文字</h2>
+		<h3>文章樣式</h3>
+		<article>
+			<h2>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum a officiis cum enim molestias voluptas nisi omnis, ullam hic, ratione expedita impedit aperiam? Velit tempora, necessitatibus assumenda facilis eos blanditiis!
+			</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione delectus fugit esse accusantium iusto nam, velit necessitatibus numquam maxime. Iure at quis maiores quidem, facere, rem reprehenderit temporibus deserunt ab?
+			</p>
+			<h2>
+				羲之頓首。快雪時晴佳想安善未果為結力不次。王羲之頓首。山陰張侯。
+			</h2>
+			<p>
+				羲之頓首。快雪時晴佳想安善未果為結力不次。王羲之頓首。山陰張侯。
+			</p>
+		</article>
+		<h3>文字樣式</h3>
+
+		<p>.is-hidden 不顯示，EX：[ <span class="is-hidden">I AM HIDDEN NOW</span> ]</p>
+		<div class="clearfix">
+			<div class="float-left">float-left樣式</div>
+			<div class="float-right">float-right樣式</div>
+		</div>
+		<p class="style-highlightbg">.style-highlightbg 背景提示顏色樣式</p>
+		<p class="style-highlight">.style-highlight 警告訊息樣式</p>
+		<p class="style-link">.style-link 連結樣式</p>
+		<p class="style-smallfont">.style-smallfont 小字樣式</p>
+		<p class="style-left">.style-left 置左樣式</p>
+		<p class="style-center">.style-center 置中樣式</p>
+		<p class="style-right">.style-right 置右樣式</p>
+
+		<h2 id="form">表單元件</h2>
+		<h3>欄位方塊</h3>
+		<h5>滿版</h5>
+		<div class="form-block style-full">
+			<label for="" class="module-form-label">欄位名稱</label>欄位內容
+			<p id="" class="msg-error style-highlight">錯誤訊息擺放位置</p>
+		</div>
+		<h5>半版</h5>
+		<% for (var i = 0; i < 2; i++) { -%>
+		<div class="form-block style-half">
+			<label for="" class="module-form-label">欄位名稱</label>欄位內容
+			<p id="" class="msg-error style-highlight">錯誤訊息擺放位置</p>
+		</div>
+		<% } -%>
+		<h3>欄位內容-單行文字表單</h3>
+		<div class="form-block style-full">
+			<label for="" class="module-form-label">欄位名稱</label><input type="text" class="module-form-input">
+			<p id="" class="msg-error style-highlight">錯誤訊息擺放位置</p>
+		</div>
+
+		<h3>欄位內容-日期表單</h3>
+		<div class="form-block style-half"><label for="" class="module-form-label">欄位名稱</label>
+			<div class="select-wrap">
+				<input type="date" class="module-form-input" value="2018-01-01">
+			</div>
+			<p id="" class="msg-error style-highlight">錯誤訊息擺放位置</p>
+		</div>
+
+		<h3>欄位內容-下拉選單</h3>
+		<h5>自由長度</h5>
+		<div class="form-block style-full">
+			<label for="" class="module-form-label">欄位名稱</label>
+			<div class="select-wrap">
+				<select name="" id="">
+					<% for (var i = 0; i < 3; i++) { -%>
+					<option value="">選項名稱選項名稱選項名稱選項名稱選項名稱</option>
+					<% } -%>
+				</select>
+			</div>
+			<p id="" class="msg-error style-highlight">錯誤訊息擺放位置</p>
+		</div>
+		<h5>指定長度</h5>
+
+		<div class="select-wrap style-xs">
+			<select name="" id="">
+				<option value="">style-xs</option>
+				<% for (var i = 0; i < 3; i++) { -%>
+				<option value="">選項</option>
+				<% } -%>
+			</select>
+		</div>
+		<div class="select-wrap style-s">
+			<select name="" id="">
+				<option value="">style-s</option>
+				<% for (var i = 0; i < 3; i++) { -%>
+				<option value="">選項</option>
+				<% } -%>
+			</select>
+		</div>
+		<div class="select-wrap style-m">
+			<select name="" id="">
+				<option value="">style-m</option>
+				<% for (var i = 0; i < 3; i++) { -%>
+				<option value="">選項</option>
+				<% } -%>
+			</select>
+		</div>
+
+		<br><br>
+		<h5>滿版</h5>
+		<div class="select-wrap style-full">
+			<select name="" id="">
+				<option value="">style-full</option>
+				<% for (var i = 0; i < 3; i++) { -%>
+				<option value="">選項</option>
+				<% } -%>
+			</select>
+		</div>
+
+		<h3>欄位內容-核取方塊</h3>
+		<h5>單選框</h5>
+		<% for (var i = 0; i < 3; i++) { -%>
+		<label for="myradio" class="module-radio">
+			<input type="radio" name="myradio" id="">
+			<i class="module-symbol"></i>
+			<span>選項名稱</span>
+			<p class="error_msg"></p>
+		</label>
+		<% } -%>
+		<br><br>
+		<h5>多選框</h5>
+		<% for (var i = 0; i < 3; i++) { -%>
+		<label for="mycheck" class="module-radio">
+			<input type="checkbox" name="mycheck" id="">
+			<i class="module-symbol"></i>
+			<span>選項名稱</span>
+			<p class="error_msg"></p>
+		</label>
+		<% } -%>	
+
+		<h3>欄位內容-選擇檔案</h3>
+		<script>
+			function setText(el,name){
+				var newpath = el.value;
+				var showFilename = newpath.split("\\")[(newpath.split("\\").length)-1];
+				document.getElementById(name).value = showFilename;
+				if( showFilename == ""){
+					document.getElementById(name).value = "未選擇檔案";    	
+				}else{
+					document.getElementById(name).value = showFilename;    	    	
+				}
+			} 
+		</script>
+		<div class="style-center">
+			<div class="wrap-fileloader">
+				<span class="btn style-xl style-rectangle" id="pseudobutton" alt="選擇檔案">
+					<img src="/img/common/icon-upload.svg" alt="">選擇檔案
+					<input id="filename" type="file" class="file-hidden" onchange="setText(this,'showFilename');"><!-- 完整檔案路徑在這個input -->
+				</span>
+				<input id="showFilename" type="text" value="未選擇檔案"><!-- 這個input只用來顯示檔名 -->
+			</div>					
+			<a id="upload" class="btn style-xl style-rectangle style-highlight" alt="確定上傳">確定上傳</a>
+			<p id="" class="style-center msg-error style-highlight">錯誤訊息擺放位置</p>
+		</div>
+
+		<h2 id="component">頁面元件</h2>
+		<h3>標題元件</h3>
+		<h3>按鈕元件</h3>
+		<h3>段落區塊元件</h3>
+		<h3>圖示元件</h3>
+		<h3>列表元件</h3>
+		<h5>數字列表</h5>
+		<ul class="style-decimal">
+			<li>item 1</li>
+			<li>item 2</li>
+			<li>item 3</li>
+		</ul>
+		<br><br>
+		<h5>點點列表</h5>
+		<ul class="style-disc">
+			<li>item 1</li>
+			<li>item 2</li>
+			<li>item 3</li>
+		</ul>
+		<h3>手風琴元件</h3>
+		<ul class="module-accordionset">
+			<% for(var i = 0; i < 3; i++){ %>
+			<li class="module-accordion" data-index=<%=i+1%> >
+				<div class="accordion-bar">
+					<div class="col-title"><b>標題標題標題</b></div>
+					<div class="col-arrow"><span><i class="icon-plus"></i></span></div>	
+				</div>
+				<div class="accordion-content">
+					<div class="inner">
+						內容內容內容 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ex, a animi soluta eius aspernatur ullam neque dolorum quam doloremque adipisci tempora praesentium, totam voluptas libero quos aliquam in voluptatem.
+					</div>
+				</div>
+			</li>
+			<% } %>
+		</ul>
+		<h3>頁碼元件</h3>
+		<%- include("include/_pager") %>	
+		<h3>判斷寬度元件</h3>
+		<h5>w > 1024 時才顯示</h5>
+		<p class="on-desk">.on-desk</p>
+		<br><br>
+		<h5>w <= 1024 時才顯示</h5>
+		<p class="on-mobile">.on-mobile</p>
+		<br><br>
+		<h5>w > 768 時才顯示</h5>
+		<p class="on-deskpad">.on-deskpad</p>
+		<br><br>
+		<h5>w <= 768 時才顯示</h5>
+		<p class="on-mobilephone">.on-mobilephone</p>
+		<h3>等比縮放容器</h3>
+		<h5>16 : 9</h5>
+		<div class="imgframe imgframe-16to9" style="background-image: url('https://dummyimage.com/1920x1080/aaa/fff')"></div>
+		<h5>4 : 3</h5>
+		<div class="imgframe imgframe-4to3" style="background-image: url('https://dummyimage.com/800x600/bbb/fff')"></div>
+		<h5>3 : 2</h5>
+		<div class="imgframe imgframe-3to2" style="background-image: url('https://dummyimage.com/600x400/ccc/fff')"></div>
+		<h5>1 : 1</h5>
+		<div class="imgframe imgframe-1to1" style="background-image: url('https://dummyimage.com/600x600/ddd/fff')"></div>
+
+
+
+
+	</div>
+</section>
 
 <!-- @@close-->
 

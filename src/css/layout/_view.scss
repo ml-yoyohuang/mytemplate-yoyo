@@ -86,7 +86,6 @@ html,body{
 .style-link{
   color: $c-ci;
   text-decoration: underline;
-  // @include transition(color 0.1s ease);
   &:link,&:visited{
     color: $c-ci;
   }

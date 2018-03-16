@@ -1,0 +1,37 @@
+.wrap-fileloader{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	@media screen and (max-width:$lt-bp-s) {
+		margin-bottom: 1em;
+		width: 100%;
+	}
+	.btn.style-xl, a.btn.style-xl{
+		margin-right: 0;
+		margin-left: 0;
+		position: relative;
+	}
+	input{
+		width: 190px;
+		padding: 1em;
+		@media screen and (max-width:$lt-bp-s) {
+			width: 100%;
+			padding: 0.5em;
+		}
+	}
+	input.file-hidden{
+		opacity: 0;
+		z-index: 1;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		cursor: pointer;
+	}
+	&+.btn+p.msg-error{
+		margin-top: 10px;
+	}
+}

@@ -1,0 +1,166 @@
+// Initial
+@import "../initial";
+
+/* SELECT MODULE */
+// .select-wrap>(select>option)+::after
+
+// SKELETON
+$select-h: 40px;
+$select-h-m: 30px;
+$select-mw: 130px;
+select{
+    height: $select-h;
+    max-width: 100%;
+    min-width: $select-mw;
+    font-size: 1em;
+    cursor: pointer;
+    background: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 25px;
+    letter-spacing: 2px;
+    -webkit-appearance: none; /*Chrome*/
+    -moz-appearance: none; /*FF*/
+    appearance: none;/*CSS3*/
+    &::-ms-expand {
+        display: none; /*IE*/
+        @media screen and (max-width:$bp-m) {
+            letter-spacing: 1px;
+        }
+    }
+    &.error{
+    }
+    option{
+        max-width: 100%;
+        border: 0;
+        letter-spacing: 2px;
+    }
+    @media screen and (max-width:$lt-bp-s) {
+        height: $select-h-m;
+        line-height: $select-h-m;
+    }
+}
+//STYLE
+select{
+    border: 2px solid #999;
+    @media screen and (max-width:$lt-bp-s) {
+        border-width: 1px;
+    }
+    &:focus{
+        border-color: $c-red;
+    }
+}
+.select-wrap{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
+    // margin-right: 5px;
+    &+&{
+        margin-left: 5px;
+        // margin-right: 0;
+        @media screen and (max-width:$lt-bp-m) {
+            margin-left: 0;
+            margin-top: 5px;
+        }
+        @media screen and (max-width:$lt-bp-s) {
+            margin-left: 0;
+            margin-top: 0;
+        }
+    }
+    &.style-xs{
+        width: 100px;
+        select{
+            min-width: 100px;
+        }
+    }
+    &.style-s{
+        width: 130px;
+    }
+    &.style-m{
+        width: 200px;
+    }
+    &.style-full{
+        width: 100%;
+    }
+    &.style-half{
+        width: calc(50% - 5px);
+        .block-address-cityarea &{
+            @media screen and (max-width:$lt-bp-s) {
+                width: 100%;
+            }
+        }
+        select{
+            min-width: 100%;
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    @media screen and (max-width:$lt-bp-s) {
+        width: 100%;
+        // width: calc(100% - 8px);
+        margin-bottom: 5px;
+    }
+    .form-block>&:last-child{
+        @media screen and (max-width:$lt-bp-s) {
+            margin-bottom: 0;
+        }
+    }
+}
+.append-text{
+    display: inline-block;
+    margin-right: 5px;
+}
+.select-wrap{ //set arrow icon on date & select
+   
+    select{
+        width: 100%;
+        -webkit-appearance: none; /*Chrome*/
+        -moz-appearance: none; /*FF*/
+        appearance: none;/*CSS3*/
+        padding-top: 0;
+        padding-bottom: 0;
+        @media screen and (max-width:$lt-bp-s) {
+            width: 100%;
+            min-width: 0;
+        }
+    }
+    &.is-focus{
+        &::after{
+            border-right: 2px solid $c-red;
+            border-bottom: 2px solid $c-red;            
+        }
+    }
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        top: 50%;
+        bottom: 0;
+        right: 1em;
+        margin-top: -5px;
+        // V-shape arrow
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid #999;
+        border-bottom: 2px solid #999;
+        transform: rotate(45deg);
+
+        /* traingle arrow */
+        // width: 0;
+        // height: 0;
+        // border-style: solid;
+        // border-width: 4px 4px 0 4px;
+        // border-color: #666 transparent transparent transparent;
+
+        @media screen and (max-width:$bp-m) {
+            // width: 5px;
+            // height: 5px;
+            // margin-top: -7px;
+        }
+    }
+}
+

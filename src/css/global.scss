@@ -52,7 +52,6 @@ table {
   border-spacing: 0;
 }
 
-
 @import "layout/fonts";
 @import "layout/basic";
 
@@ -63,9 +62,8 @@ table {
 @import "module/wrapper";
 
 // Module
+@import "module/animate";
+@import "module/button";
+@import "module/icon";
 @import "module/lightbox";
-// @import "module/icon";
-// @import "module/button";
-// @import "module/form";
-// @import "module/animate";
-@import "module/list";
+@import "module/form";

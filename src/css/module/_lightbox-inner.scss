@@ -1,0 +1,36 @@
+@import "../initial";
+.inner{
+  line-height: 1.8;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 640px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 50px;
+  border-radius: 10px;
+  border-bottom: 8px solid $c-red;
+  @media screen and (max-width:$lt-bp-s) {
+    max-width: 100%;
+    padding: 20px 15px;
+    border-radius: 5px;
+    border-bottom: 4px solid $c-red;
+  }
+
+  .btn-x{
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 16px;
+    @media screen and (max-width:$lt-bp-s) {
+      padding: 8px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

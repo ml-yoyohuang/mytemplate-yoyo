@@ -1,0 +1,216 @@
+// Initial
+@import "../initial";
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+input::-ms-clear {
+    display: none;
+    width : 0;
+    height: 0;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #999;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #999;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #999;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #999;
+}
+/* INPUT MODULE */
+$label-w : 150px;
+$label-w-m : 8em;
+$input-h : 40px;
+$input-h-m : 30px;
+
+.form-block{
+    position: relative;
+    padding-left: $label-w;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    min-height: $input-h;
+    line-height: $input-h;
+    @media screen and (max-width:$lt-bp-m) {
+        padding-left: $label-w-m;
+        padding-right: 0;
+        padding-bottom: 5px;
+    }
+    @media screen and (max-width:$lt-bp-s) {
+        min-height: $input-h-m;
+        line-height: $input-h-m;
+    }
+
+    /* FORM BLOCK STYLES */
+    &.style-nolabel{
+        padding-left: 0;
+    }
+    &.style-half{
+        display: inline-block;
+        vertical-align: top;
+        width: 45%;
+        width: calc(  50% - 0.15em);
+
+        @media (max-width: 767px){
+            width: 100%;
+            margin-left: 0;
+        }
+        .module-radio{
+            @media screen and (max-width:$lt-bp-s) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &.style-full{
+        &:last-child{
+            @media screen and (max-width:$lt-bp-s) {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    /* FORM BLOCK CHILDS */
+    .helper{
+        line-height: 1.4;
+        padding-top: 10px;
+        font-size: $fz;
+        @media screen and (max-width:$lt-bp-s) {
+            font-size: $fzm;
+        }
+    }
+
+    label.error{ /*appended from validate js*/
+        display: block;
+        text-align: left;
+        line-height: 2;
+        color: #e60012;
+    }
+    fieldset{
+        line-height: 1;
+        vertical-align: auto;
+        vertical-align: initial;
+        display: inline-block;
+        &.block{
+            width: 100%;
+            display: block;
+            line-height: $input-h;
+            line-height: inherit;
+            &+.block{
+                padding-top: 20px;
+            }
+            .append-text{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.module-form-label{
+    width: $label-w;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    padding-top: 10px;
+    padding-right: 1em;
+    text-align: right;
+    @media screen and (max-width:$lt-bp-m) {
+        width: $label-w-m;
+        // text-align: left;
+        padding-bottom: 10px;
+    }
+}
+.module-form-input{
+    width: 100%;
+    height: $input-h;
+    background-color: white;
+    color: black;
+    border: 2px solid #999;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-appearance: none; /*Chrome*/
+    -moz-appearance: none; /*FF*/
+    appearance: none;/*CSS3*/
+    @media screen and (max-width:$lt-bp-s) {
+        height: $input-h-m;
+        border-width: 1px;
+    }
+    &[readonly]{
+        border-color: white;
+    }
+    &.style-xxs{
+        max-width: 55px;
+    }
+    &.style-xs{
+        max-width: 100px;
+    }
+    &.style-s{
+        max-width: 130px;
+    }
+    &.style-m{
+        max-width: 200px;
+    }
+    &.style-l{
+        max-width: 290px;
+    }
+    &:focus{
+        &:not([readonly]){
+            border-color: $c-red;
+        }
+    }
+}
+.module-form-textarea{
+    display: block;
+    width: 100%;
+    min-height: 7.5em;
+    line-height: 1.5;
+    background-color: white;
+    border: 2px solid #999;
+    padding-left: 10px;
+    padding-right: 10px;
+    @media screen and (max-width:$lt-bp-s) {
+        height: 6em;
+        border-width: 1px;
+    }
+    &:focus{
+        &:not([readonly]){
+            border-color: $c-red;
+        }
+    }
+}
+
+/* SP */
+
+.form-block.style-address-cityarea{
+    .select-wrap.style-half{
+        @media screen and (max-width:$lt-bp-m) {
+            width: 100%;
+        }
+    }
+}
+
+
+.form-block.style-localcall{
+    span{
+        display: inline-block;
+        width: 1em;
+        margin-left: -0.3em;
+        text-align: center;
+        &+.module-form-input{
+            margin-left: -0.3em;
+            width: calc(100% - 55px - 1em);  /*xxs*/
+            max-width: 100%;
+        }
+    }
+}
